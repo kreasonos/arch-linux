@@ -1,0 +1,5 @@
+local/chromium-widevine 1:1.4.8.893-1
+local/nudoku-git 0.2.5.r2.gd8cac47-1
+local/projectm-libvisual-alsa 2.1.0-4 (projectm-pulse)
+local/python2-tweepy-git 0.1018.cd46550-1
+local/turses 0.3.1-9
