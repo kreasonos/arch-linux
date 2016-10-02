@@ -1,0 +1,7 @@
+mv file.txt into arch-linux folder 
+cd arch-linux
+git status
+git add file
+git status
+git commit -m 'message'
+git push origin master 
