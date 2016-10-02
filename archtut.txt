@@ -1,0 +1,63 @@
+#wifi-menu
+#lsblk
+#parted /dev/yourdrive
+#mklabel gpt
+#mkpart ESP fat32 1MiB 513MiB
+#set 1 boot on
+#mkpart primary ext4 513MiB 100%
+#quit
+#mkfs.fat -F32 /dev/thebootdrive
+#mkfs.ext4 /dev/theprimarydrive
+#mount /dev/primarydrive /mnt
+#mkdir -p /mnt/boot
+#mount /dev/bootdrive /mnt/boot
+#pacstrap -i /mnt base base-devel
+#genfstab -U /mnt > /mnt/etc/fstab
+#arch-chroot /mnt /bin/bash
+#nano /etc/locale.gen
+uncomment US.UTF-8
+#ctrl+o enter, ctrl+x enter, clear+enter
+#locale-gen
+#echo LANG=en_US.UTF-8 > /etc/locale.conf
+#export LANG=en_US.UTF-8
+#tzselect
+#region, country, city
+#1 for yes
+#ln -s /usr/share/zoneinfo/America/Chicago > /etc/localtime
+#hwclock --systohc --utc
+#pacman -S dialog iw wpa-supplicant grub efibootmgr
+#grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+#grub-mkconfig -o boot/grub/grub.cfg
+#echo hostname > /etc/hostname
+#passwd
+#exit
+#umount -R /mnt
+#shutdown
+#remove usb, start computer
+#login = root
+#enter password
+#wifi-menu
+#ping -c 3 www.google.com
+#if using wifi, systemctl stop dhcpcd@yourenp.service
+#useradd -m -G wheel,users -s /bin/bash username
+#passwd username
+#EDITOR=nano visudo
+#uncomment %wheel ALL=(ALL)ALL
+#nano /etc/pacman.conf
+#uncomment 
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+#pacman -Sy
+#pacman -S xorg-server xorg-server-utils xorg-xinit wpa-actiond
+#pacman -S xf86-video-intel
+#pacman -S xf86-input-synaptics
+#pacman -S i3 rxvt-unicode
+#nano ~/.xinitrc
+#exec i3
+#ctrl+o enter, ctrl+x
+#reboot
+#login as user
+#startx
+#enter, enter
+#mod+enter will give you terminal (mod key is windows key)
+
