@@ -9,4 +9,4 @@ bin/rails generate controller Welcome index
 save
 //open config/routes.rb in editor
 //add code root 'welcome#index'
-
+//testing
