@@ -1,0 +1,12 @@
+rails new blog
+cd blog
+bin/rails server
+//check http://localhost:3000
+end server
+bin/rails generate controller Welcome index
+//open app/views/welcome/index.html.erb in editor
+//delete code and replace with... <h1>Hello, Rails!<h1>
+save
+//open config/routes.rb in editor
+//add code root 'welcome#index'
+
